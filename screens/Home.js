@@ -30,6 +30,7 @@ export default function Home({navigation}) {
         <View>
             <Button title='GetData' onPress={()=>GetData()} />
             <Button title='Add user' onPress={()=> navigation.navigate("Register")} />
+            <Button title='Edit user' onPress={()=> navigation.navigate("Edit")} />
             {users.map(o=><View key={o.id}>
                 <Image source={{uri:o.avatar}} style={{width:100, height:100}}/>
                 <Text>{o.id} - {o.fullname}</Text>

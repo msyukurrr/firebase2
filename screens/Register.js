@@ -1,6 +1,6 @@
 import { View, Text, Button, Image, TextInput } from 'react-native';
-import { collection, getDocs, getFirestore, addDoc, setDoc } from "firebase/firestore";
-import { useState } from 'react';
+import { collection, getDocs, getFirestore, addDoc, setDoc, doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from 'react';
 
 export default function Register(){
 
@@ -21,9 +21,9 @@ export default function Register(){
 
     return (
         <View>
-            <TextInput placeholder="fullname" onChangeText={(txt)=>setFN(txt)}></TextInput>
-            <TextInput placeholder="age" onChangeText={(txt)=>setAge(txt)}></TextInput>
-            <TextInput placeholder="avatar" onChangeText={(txt)=>setAvat(txt)}></TextInput>
+            <TextInput value={fn} placeholder="fullname" onChangeText={(txt)=>setFN(txt)}></TextInput>
+            <TextInput value={age} placeholder="age" onChangeText={(txt)=>setAge(txt)}></TextInput>
+            <TextInput value={avat} placeholder="avatar" onChangeText={(txt)=>setAvat(txt)}></TextInput>
             <Button title="Add" onPress={()=>AddUser()} />
         </View>
     )

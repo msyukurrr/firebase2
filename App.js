@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/Home';
 import RegisterScreen from './screens/Register';
+import EditScreen from './screens/Edit';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
@@ -30,6 +31,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen}/>
         <Stack.Screen name="Register" component={RegisterScreen}/>
+        <Stack.Screen name="Edit" component={EditScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
    );
